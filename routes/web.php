@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 //$role = Role::create(['name' => 'admin']);
 //$role = Role::create(['name' => 'client']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
 //Route::post('/auth/register', AuthController::class, 'register');
 //Route::post('/auth/login', AuthController::class, 'login');
+Route::fallback(function () {
+    return view('welcome');
+});
